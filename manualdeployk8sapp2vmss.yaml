@@ -16,7 +16,7 @@ variables:
   value: 'akscni-rg'
 
 steps:
-- task: AzureCLI@2s
+- task: AzureCLI@2
   inputs:
     azureSubscription: 'akspolicy-rg-conn'
     scriptType: 'bash'
