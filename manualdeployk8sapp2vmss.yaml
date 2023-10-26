@@ -22,8 +22,13 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      # curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      echo "[info] print aks list"
+      az aks list
+      echo "[info] get credentials"
       az aks get-credentials -g $(rgname) -n $(clustername)
+      echo "[info] install kubectl"
       sudo az aks install-cli
+      echo "[info] get the result using kubectl"
       kubectl get node
     failOnStandardError: true
