@@ -15,10 +15,11 @@ variables:
 - name: 'rgname' # new variable defined in YAML
   value: 'akscni-rg'
 
+# https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-cli-v2?view=azure-pipelines
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'akspolicy-rg-conn'
+    azureSubscription: 'akscni-rg-conn'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
