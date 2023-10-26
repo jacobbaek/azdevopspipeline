@@ -1,0 +1,37 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+# resources:
+#   repositories:
+#   - repository: sampleapp
+#     type: git
+#     endpoint: JacobBaekHome
+#     name: JacobBaekHome/sampleapp
+
+jobs:
+- deployment: deploy
+  # condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
+  displayName: deploy to production
+  pool: "testvmss"
+  environment: testvmss
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout : self
+        - task: KubernetesManifest@0
+          displayName: deploy sampleapp
+          inputs:
+            action: 'deploy'
+            namespace: 'default'
+            #strategy: 'canary'
+            percentage: '50'
+            manifests: 'yamls/deploy-nginx.yaml'
+            secretType: 'dockerRegistry'
+            kubernetesServiceConnection: 'akscni-cluster-sc'
+            #containerRegistryType: 'Azure Container Registry'
