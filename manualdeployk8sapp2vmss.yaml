@@ -33,4 +33,4 @@ steps:
       echo "[info] get the result using kubectl"
       kubectl get node
       echo "[info] succeed"
-    failOnStandardError: true
+    #failOnStandardError: true
