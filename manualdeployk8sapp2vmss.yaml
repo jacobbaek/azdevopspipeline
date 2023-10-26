@@ -15,7 +15,6 @@ variables:
 - name: 'rgname' # new variable defined in YAML
   value: 'akscni-rg'
 
-# https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/azure-cli-v2?view=azure-pipelines
 steps:
 - task: AzureCLI@2
   inputs:
@@ -33,4 +32,4 @@ steps:
       echo "[info] get the result using kubectl"
       kubectl get node
       echo "[info] succeed"
-    failOnStandardError: true
+    failOnStandardError: false
