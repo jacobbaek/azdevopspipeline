@@ -16,7 +16,6 @@ variables:
   value: 'akscni-rg'
 
 steps:
-# kubeconfig
 - task: AzureCLI@2s
   inputs:
     azureSubscription: 'akspolicy-rg-conn'
