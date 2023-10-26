@@ -21,13 +21,13 @@ steps:
   displayName: 'install Azure CLI'
 
 # kubeconfig
-- task: AzureCLI@2
+- task: AzureCLI@2s
   inputs:
     azureSubscription: 'akspolicy-rg-conn'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az aks get-credentials -g $(rgname) --cluster-name $(clustername)
+      az aks get-credentials -g $(rgname) -n $(clustername)
       sudo az aks install-cli
       kubectl get node
     failOnStandardError: true
