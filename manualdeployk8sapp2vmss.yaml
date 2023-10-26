@@ -6,14 +6,9 @@
 trigger:
 - master
 
-# resources:
-#   repositories:
-#   - repository: sampleapp
-#     type: git
-#     endpoint: JacobBaekHome
-#     name: JacobBaekHome/sampleapp
+pool:
+  name: testvmss
 
-jobs:
 variables: 
 - name: 'clustername' # new variable defined in YAML
   value: 'akscni-cluster'
