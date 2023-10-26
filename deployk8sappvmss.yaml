@@ -31,8 +31,7 @@ jobs:
             namespace: 'default'
             #strategy: 'canary'
             percentage: '50'
-            manifests: 'deploytok8s/sampleapp.yaml'
+            manifests: 'yamls/deploy-nginx.yaml'
             secretType: 'dockerRegistry'
             kubernetesServiceConnection: 'akscni-cluster-sc'
             #containerRegistryType: 'Azure Container Registry'
-
