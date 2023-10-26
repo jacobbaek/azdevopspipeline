@@ -16,6 +16,17 @@ variables:
   value: 'akscni-rg'
 
 steps:
+# Specify python version
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    architecture: 'x64'
+
+# Update to latest Azure CLI version
+- bash: pip install --pre azure-cli --extra-index-url https://azurecliprod.blob.core.windows.net/edge
+  displayName: 'Upgrade Azure CLI'
+
+# kubeconfig
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'akspolicy-rg-conn'
