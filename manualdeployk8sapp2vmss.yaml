@@ -32,4 +32,5 @@ steps:
       sudo az aks install-cli
       echo "[info] get the result using kubectl"
       kubectl get node
+      echo "[info] succeed"
     failOnStandardError: true
