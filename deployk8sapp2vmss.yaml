@@ -33,5 +33,5 @@ jobs:
             percentage: '50'
             manifests: 'yamls/deploy-nginx.yaml'
             secretType: 'dockerRegistry'
-            kubernetesServiceConnection: 'akscni-cluster-kubeconfig'
+            kubernetesServiceConnection: 'akscni-cluster-sc'
             #containerRegistryType: 'Azure Container Registry'
