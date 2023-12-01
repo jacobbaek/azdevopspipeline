@@ -25,7 +25,7 @@ schedules:
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'akscni-rg-conn'
+    azureSubscription: 'akstest-rg-conn'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
