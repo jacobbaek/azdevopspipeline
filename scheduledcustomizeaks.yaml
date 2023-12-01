@@ -11,9 +11,9 @@ pool:
 
 variables: 
 - name: 'clustername' # new variable defined in YAML
-  value: 'akscni-cluster'
+  value: 'akstest-cluster'
 - name: 'rgname' # new variable defined in YAML
-  value: 'akscni-rg'
+  value: 'akstest-rg'
 
 schedules:
 - cron: '11 00 * * *'
