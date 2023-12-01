@@ -16,7 +16,7 @@ variables:
   value: 'akstest-rg'
 
 schedules:
-- cron: '11 45 * * *'
+- cron: '48 11 * * *'
   displayName: Daily midnight build
   branches:
     include:
