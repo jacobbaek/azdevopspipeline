@@ -31,7 +31,7 @@ steps:
     inlineScript: |
       #curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       echo "[info] get credentials"
-      az aks update -g $(rgname) -n $(clustername) --enable-cluster-autoscaler --min-count 1 --max-count 3
+      az aks update -g $(rgname) -n $(clustername) --update-cluster-autoscaler --min-count 1 --max-count 3
       echo $?
       echo "[info] succeed"
     failOnStandardError: false
