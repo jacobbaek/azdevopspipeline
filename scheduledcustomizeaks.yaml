@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- main
 
 pool:
   vmImage: ubuntu-latest
@@ -16,7 +16,7 @@ variables:
   value: 'akstest-rg'
 
 schedules:
-- cron: '11 00 * * *'
+- cron: '11 45 * * *'
   displayName: Daily midnight build
   branches:
     include:
@@ -31,7 +31,7 @@ steps:
     inlineScript: |
       #curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       echo "[info] get credentials"
-      az aks update -g $(rgname) -n $(clustername) --update-cluster-autoscaler --min-count 1 --max-count 3
+      az aks update -g $(rgname) -n $(clustername) --update-cluster-autoscaler --min-count 2 --max-count 3
       echo $?
       echo "[info] succeed"
     failOnStandardError: false
