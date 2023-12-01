@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: default
+  vmImage: ubuntu-latest
 
 variables: 
 - name: 'clustername' # new variable defined in YAML
